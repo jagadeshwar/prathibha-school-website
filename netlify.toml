@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Serve the single-page app: fall back to index.html for any unknown path.
+# Real files (e.g. /assets/*) are served directly; this only catches misses.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

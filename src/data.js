@@ -11,7 +11,7 @@ export const NAV = [
 export const BRANCHES = [
   {
     name: 'Narva Branch',
-    hue: '#c9a25a',
+    hue: 'var(--accent-1)',
     tagline: 'Our founding campus',
     text: 'A serene, spacious campus in Narva with modern classrooms, science labs, and a library that has nurtured generations of learners.',
     address: 'Narva (Village & Mandal), Narayanpet District, Telangana – 509130',
@@ -20,7 +20,7 @@ export const BRANCHES = [
   },
   {
     name: 'Marikal Branch',
-    hue: '#b8893b',
+    hue: 'var(--accent-2)',
     tagline: 'Our growing campus',
     text: 'A vibrant campus in Marikal offering the same Prathibha values with bright facilities, sports grounds, and dedicated faculty.',
     address: 'Marikal (Village & Mandal), Narayanpet District, Telangana – 509105',
@@ -52,14 +52,14 @@ export const ABOUT_POINTS = [
 ]
 
 export const FACULTY = [
-  { name: 'Faculty Member', role: 'Head of School', state: 'Kerala', hue: '#c9a25a' },
-  { name: 'Faculty Member', role: 'Senior Teacher', state: 'Odisha', hue: '#b8893b' },
-  { name: 'Faculty Member', role: 'Senior Teacher', state: 'Tamil Nadu', hue: '#caa66b' },
-  { name: 'Faculty Member', role: 'Senior Teacher', state: 'Andhra Pradesh', hue: '#bd9550' },
+  { name: 'Faculty Member', role: 'Head of School', state: 'Kerala', hue: 'var(--accent-1)' },
+  { name: 'Faculty Member', role: 'Senior Teacher', state: 'Odisha', hue: 'var(--accent-2)' },
+  { name: 'Faculty Member', role: 'Senior Teacher', state: 'Tamil Nadu', hue: 'var(--accent-3)' },
+  { name: 'Faculty Member', role: 'Senior Teacher', state: 'Andhra Pradesh', hue: 'var(--accent-4)' },
 ]
 
 export const NEWS = [
-  { date: 'June 18, 2026', title: 'Class of 2026 Commencement', text: 'A record graduating class earns placements at leading universities worldwide.', hue: '#d8c79b' },
-  { date: 'May 30, 2026', title: 'Robotics Team Wins Regionals', text: 'Our students take first place with an award for engineering excellence.', hue: '#c9a25a' },
-  { date: 'May 12, 2026', title: 'Spring Arts Exhibition', text: 'Two weeks of student galleries, recitals, and a sold-out theatre production.', hue: '#cdb079' },
+  { date: 'June 18, 2026', title: 'Class of 2026 Commencement', text: 'A record graduating class earns placements at leading universities worldwide.', hue: 'var(--accent-5)' },
+  { date: 'May 30, 2026', title: 'Robotics Team Wins Regionals', text: 'Our students take first place with an award for engineering excellence.', hue: 'var(--accent-1)' },
+  { date: 'May 12, 2026', title: 'Spring Arts Exhibition', text: 'Two weeks of student galleries, recitals, and a sold-out theatre production.', hue: 'var(--accent-6)' },
 ]

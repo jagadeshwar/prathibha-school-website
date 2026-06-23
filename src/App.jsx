@@ -28,17 +28,17 @@ function Reveal({ children, i = 0, className, as = 'div' }) {
 }
 
 /* A soft, on-brand illustrated panel used in place of photos */
-function Crest({ hue = '#c9a25a', label }) {
+function Crest({ hue = 'var(--accent-1)', label }) {
   return (
     <div style={{ width: '100%', height: '100%', display: 'grid', placeItems: 'center',
-      background: `radial-gradient(120% 120% at 30% 20%, ${hue}55, transparent 60%),
-                   linear-gradient(160deg, #efe6d2, #f9f2e2)` }}>
+      background: `radial-gradient(120% 120% at 30% 20%, color-mix(in srgb, ${hue} 33%, transparent), transparent 60%),
+                   linear-gradient(160deg, var(--crest-from), var(--crest-to))` }}>
       <svg width="46%" viewBox="0 0 64 64" fill="none" aria-hidden>
         <path d="M32 8 6 21l26 13 20-10v15h4V21z" fill={hue} />
         <path d="M14 31v12c0 5 8 9 18 9s18-4 18-9V31l-18 9z" fill={hue} opacity=".7" />
       </svg>
       {label && <span style={{ position: 'absolute', bottom: 14, fontSize: '.72rem', letterSpacing: '.18em',
-        textTransform: 'uppercase', color: '#8a7a55', fontWeight: 600 }}>{label}</span>}
+        textTransform: 'uppercase', color: 'var(--crest-label)', fontWeight: 600 }}>{label}</span>}
     </div>
   )
 }
@@ -102,7 +102,7 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.94, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}>
-          <div className="hero-card"><Crest hue="#c9a25a" label="Prathibha High School" /></div>
+          <div className="hero-card"><Crest hue="var(--accent-1)" label="Prathibha High School" /></div>
           <motion.div className="hero-badge"
             initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6, duration: 0.6 }}>
             <span className="ring">★</span>
@@ -126,7 +126,7 @@ function About() {
     <section id="about" className="about">
       <div className="container about-grid">
         <Reveal className="about-img-wrap">
-          <div className="about-img"><Crest hue="#b8893b" label="Our Campus" /></div>
+          <div className="about-img"><Crest hue="var(--accent-2)" label="Our Campus" /></div>
           <span className="about-accent" />
         </Reveal>
         <div>
@@ -259,12 +259,12 @@ function Admissions() {
 
 function Gallery() {
   const tiles = [
-    { hue: '#c9a25a', cls: 'wide tall' },
-    { hue: '#d8c79b', cls: '' },
-    { hue: '#b8893b', cls: '' },
-    { hue: '#cdb079', cls: 'tall' },
-    { hue: '#caa66b', cls: '' },
-    { hue: '#d3bd86', cls: 'wide' },
+    { hue: 'var(--accent-1)', cls: 'wide tall' },
+    { hue: 'var(--accent-5)', cls: '' },
+    { hue: 'var(--accent-2)', cls: '' },
+    { hue: 'var(--accent-6)', cls: 'tall' },
+    { hue: 'var(--accent-3)', cls: '' },
+    { hue: 'var(--accent-7)', cls: 'wide' },
   ]
   return (
     <section id="gallery">

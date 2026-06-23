@@ -2,6 +2,9 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { NAV, STATS, PROGRAMS, ABOUT_POINTS, FACULTY, NEWS, BRANCHES } from './data.js'
 
+// Helper for files in /public — swap these out for real photos later.
+const asset = (p) => `${import.meta.env.BASE_URL}${p}`
+
 const reveal = {
   hidden: { opacity: 0, y: 32 },
   show: (i = 0) => ({
@@ -102,7 +105,7 @@ function Hero() {
           initial={{ opacity: 0, scale: 0.94, y: 20 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.9, ease: [0.2, 0.8, 0.2, 1] }}>
-          <div className="hero-card"><Crest hue="var(--accent-1)" label="Prathibha High School" /></div>
+          <div className="hero-card"><img src={asset('images/classroom.svg')} alt="Prathibha High School classroom" /></div>
           <motion.div className="hero-badge"
             initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6, duration: 0.6 }}>
             <span className="ring">★</span>
@@ -126,7 +129,7 @@ function About() {
     <section id="about" className="about">
       <div className="container about-grid">
         <Reveal className="about-img-wrap">
-          <div className="about-img"><Crest hue="var(--accent-2)" label="Our Campus" /></div>
+          <div className="about-img"><img src={asset('images/teaching.svg')} alt="A teacher leading a lesson at Prathibha High School" /></div>
           <span className="about-accent" />
         </Reveal>
         <div>
@@ -259,12 +262,12 @@ function Admissions() {
 
 function Gallery() {
   const tiles = [
-    { hue: 'var(--accent-1)', cls: 'wide tall' },
-    { hue: 'var(--accent-5)', cls: '' },
-    { hue: 'var(--accent-2)', cls: '' },
-    { hue: 'var(--accent-6)', cls: 'tall' },
-    { hue: 'var(--accent-3)', cls: '' },
-    { hue: 'var(--accent-7)', cls: 'wide' },
+    { img: 'images/sports.svg', label: 'Sports & Games', cls: 'wide tall' },
+    { img: 'images/lab.svg', label: 'Science Lab', cls: '' },
+    { img: 'images/classroom.svg', label: 'Classroom Learning', cls: '' },
+    { img: 'images/teaching.svg', label: 'Our Teachers', cls: 'tall' },
+    { img: 'images/library.svg', label: 'Library & Reading', cls: '' },
+    { img: 'images/arts.svg', label: 'Arts & Music', cls: 'wide' },
   ]
   return (
     <section id="gallery">
@@ -276,7 +279,10 @@ function Gallery() {
         <Reveal>
           <div className="gallery-grid">
             {tiles.map((t, i) => (
-              <figure key={i} className={t.cls}><Crest hue={t.hue} /></figure>
+              <figure key={i} className={t.cls}>
+                <img src={asset(t.img)} alt={t.label} loading="lazy" />
+                <figcaption>{t.label}</figcaption>
+              </figure>
             ))}
           </div>
         </Reveal>
